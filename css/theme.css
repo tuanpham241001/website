@@ -1,0 +1,179 @@
+/* COLOURS */
+:root {
+    --color-1: #A4530C;   
+    --color-2: #3A230A;   
+    --color-3: #EEE9C1;   
+    --color-4: #A9C3C0;   
+    --color-5: #7A3B1E;   
+    --color-6: #1F4E5A;   
+    --color-7: #6B3F5E;   
+}
+
+/* SHAPE, FONTS, SIZES */
+:root {
+    --card-radius: 14px;        
+    --tag-radius: 8px;         
+    --photo-radius: 50%;        
+    --photo-size: 12em;
+    --border-width: 1px;
+
+    
+    --body-font: 'Source Serif 4', Georgia, serif;
+    --display-font: var(--body-font);    
+    --base-font-size: 12pt;
+    --small-font-size: 0.9rem;
+
+    --ideal-line-width: 90ch;
+    --ideal-body-width: 72rem;
+}
+
+
+/* LIGHT MODE */
+:root {
+    color-scheme: light;
+
+    --main-bg:         color-mix(in oklab, var(--color-3) 30%, white);
+    --main-bg-soft1:   color-mix(in oklab, var(--color-4) 12%, color-mix(in oklab, var(--color-3) 40%, white)); /* card body */
+    --main-bg-soft2:   color-mix(in oklab, var(--color-4) 60%, var(--main-bg-soft1));    /* card headers, table rows */
+    --accent1-bg-soft: color-mix(in oklab, var(--color-4) 85%, var(--main-bg-soft1));   
+    --border-color:    color-mix(in oklab, var(--color-4) 85%, var(--color-2));
+
+    --main:       color-mix(in oklab, var(--color-2) 55%, black);   /* body text */
+    --main-soft1: var(--color-2);                                   /* secondary text */
+    --main-soft2: color-mix(in oklab, var(--color-2) 65%, white);   /* faint text */
+
+    --accent1:      var(--color-5);   /* headings, menu */
+    --accent1-soft: var(--color-1);   /* links */
+    --accent2:      var(--color-6);   /* name */
+
+    --tag-arxiv-bg:   var(--color-5);
+    --tag-journal-bg: var(--color-6);
+    --tag-pdf-bg:     var(--color-7);
+    --tag-text:       color-mix(in oklab, var(--color-3) 40%, white);
+    --tag-border:     transparent;
+
+    --normal-font-weight: 400;
+    --thin-font-weight: 300;
+    --heavy-font-weight: 600;
+}
+
+
+/* LIGHT MODE BUTTONS  */
+:root .tag-arxiv   { background: #F4E6DA; color: #7A3B1E; border-color: #E2C9B5; }
+:root .tag-journal,
+:root .tag-slides  { background: #E0ECEB; color: #1F4E5A; border-color: #BBD1D0; }
+:root .tag-pdf     { background: #F0E3EB; color: #6B3F5E; border-color: #DBC5D3; }
+:root .tag:hover   { filter: brightness(0.97); }
+
+
+/* DARK MODE */
+:root {
+    --dark-bg:       #11191B;   
+    --dark-surface:  #172225;   
+    --dark-raised:   #1D2B2F;   
+    --dark-hover:    #24363B;   
+    --dark-border:   #3A5257;   
+    --dark-text:     #DCD6C2;   
+    --dark-link:     #8FC4BC;   
+    --dark-name:     #9DB5B1;   
+}
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        color-scheme: dark;
+        --main-bg:         var(--dark-bg);
+        --main-bg-soft1:   var(--dark-surface);
+        --main-bg-soft2:   var(--dark-raised);
+        --accent1-bg-soft: var(--dark-hover);
+        --border-color:    var(--dark-border);
+        --main:       var(--dark-text);
+        --main-soft1: color-mix(in oklab, var(--dark-text) 75%, var(--dark-bg));
+        --main-soft2: color-mix(in oklab, var(--dark-text) 64%, var(--dark-bg));
+        --accent1:      var(--dark-heading);
+        --accent1-soft: var(--dark-link);
+        --accent2:      var(--dark-name);
+        --tag-border:   transparent;
+        --normal-font-weight: 400;
+        --thin-font-weight: 300;
+        --heavy-font-weight: 600;
+    }
+    :root:not([data-theme="light"]) .tag-arxiv   { background: #262422; color: #DDB49A; border-color: #463A33; }
+    :root:not([data-theme="light"]) .tag-journal,
+    :root:not([data-theme="light"]) .tag-slides  { background: #1B2F33; color: #A6CCCF; border-color: #33494E; }
+    :root:not([data-theme="light"]) .tag-pdf     { background: #272329; color: #D2B5CB; border-color: #453A44; }
+}
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --main-bg:     var(--dark-bg);
+    --main-bg-soft1:   var(--dark-surface);
+    --main-bg-soft2:   var(--dark-raised);
+    --accent1-bg-soft: var(--dark-hover);
+    --border-color:    var(--dark-border);
+    --main:       var(--dark-text);
+    --main-soft1: color-mix(in oklab, var(--dark-text) 75%, var(--dark-bg));
+    --main-soft2: color-mix(in oklab, var(--dark-text) 64%, var(--dark-bg));
+    --accent1:      var(--dark-heading);
+    --accent1-soft: var(--dark-link);
+    --accent2:      var(--dark-name);
+    --tag-border:   transparent;
+    --normal-font-weight: 400;
+    --thin-font-weight: 300;
+    --heavy-font-weight: 600;
+}
+:root[data-theme="dark"] .tag-arxiv   { background: #262422; color: #DDB49A; border-color: #463A33; }
+:root[data-theme="dark"] .tag-journal,
+:root[data-theme="dark"] .tag-slides  { background: #1B2F33; color: #A6CCCF; border-color: #33494E; }
+:root[data-theme="dark"] .tag-pdf     { background: #272329; color: #D2B5CB; border-color: #453A44; }
+
+
+/* RESEARCH PAGE */
+:root { --paper-title: var(--color-6); }          
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --paper-title: #BCC8EA; }  
+}
+:root[data-theme="dark"] { --paper-title: #BCC8EA; }
+
+.research .compact-title-subtitle > h3 {
+    color: var(--paper-title);
+    font-size: 1.08rem;
+    letter-spacing: -0.005em;
+}
+
+
+/* DARK MODE HEADINGS */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .site-head__title { font-weight: 800; }
+    :root:not([data-theme="light"]) :is(h1, h2) { font-weight: 700; }
+}
+:root[data-theme="dark"] .site-head__title { font-weight: 800; }
+:root[data-theme="dark"] :is(h1, h2) { font-weight: 700; }
+
+
+/* RESEARCH PAGE BUTTONS  */
+/* :root .research .tag,
+:root .research .tag:hover {
+    background: #F6F4EA;
+    color: #4F463C;
+    border-color: #B7C5BE;
+    filter: none;
+}
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .research .tag,
+    :root:not([data-theme="light"]) .research .tag:hover {
+        background: #1A2427;
+        color: #B9B6A7;
+        border-color: #36494E;
+    }
+}
+:root[data-theme="dark"] .research .tag,
+:root[data-theme="dark"] .research .tag:hover {
+    background: #1A2427;
+    color: #B9B6A7;
+    border-color: #36494E;
+} */
+
+:root .research .tag:hover { filter: none; }
+.research td {
+    background-color: var(--main-bg-soft2);
+    padding-right: calc(32px + 1.3rem);
+}
+.research table { border-spacing: 0 16px; margin-block: -16px 0; }
