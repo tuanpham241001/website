@@ -315,3 +315,8 @@ td:only-child { border-radius: var(--card-radius); }
 .details-card > .details-body p { text-align: justify; }
 
 mjx-container { max-width: 100%; overflow-x: auto; overflow-y: hidden; }
+
+/* Tricky email */
+.email-hard > span{
+display: none;
+}
